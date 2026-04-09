@@ -1,5 +1,6 @@
 from langchain_core.messages import SystemMessage
 from langchain_openai import ChatOpenAI
+from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph import END, START, MessagesState, StateGraph
 
 from src.core.env import env
@@ -19,8 +20,10 @@ async def mock_llm(state: MessagesState):
     return {'messages': response}
 
 
+checkpointer = InMemorySaver()
+
 graph = StateGraph(MessagesState)
 graph.add_node(mock_llm)
 graph.add_edge(START, 'mock_llm')
 graph.add_edge('mock_llm', END)
-graph = graph.compile()
+graph = graph.compile(checkpointer=checkpointer)
