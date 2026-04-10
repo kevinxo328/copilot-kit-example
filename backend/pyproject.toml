@@ -21,7 +21,7 @@ dev = ["ruff>=0.15.9", "taskipy>=1.14.1"]
 lint = "ruff check . --fix"
 format = "ruff format ."
 check = "ruff format . && ruff check . --fix"
-dev = "fastapi dev"
+dev = "uvicorn main:app --reload --host 127.0.0.1 --port 8000"
 
 [tool.ruff]
 line-length = 100
