@@ -3,7 +3,7 @@ from copilotkit import LangGraphAGUIAgent
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.agents.test_agent.agent import graph
+from src.agents.test.agent import graph
 
 app = FastAPI()
 

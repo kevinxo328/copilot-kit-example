@@ -1,4 +1,4 @@
-.PHONY: backend frontend dev install clean
+.PHONY: backend frontend dev langsmith install clean
 
 backend:
 	cd backend && uv run task dev
@@ -8,6 +8,9 @@ frontend:
 
 dev:
 	@python3 scripts/dev.py
+
+langsmith:
+	cd backend && USE_CUSTOM_CHECKPOINTER=false uv run langgraph dev
 
 install:
 	cd backend && uv sync

@@ -20,10 +20,12 @@ async def mock_llm(state: MessagesState):
     return {'messages': response}
 
 
-checkpointer = InMemorySaver()
-
 graph = StateGraph(MessagesState)
 graph.add_node(mock_llm)
 graph.add_edge(START, 'mock_llm')
 graph.add_edge('mock_llm', END)
-graph = graph.compile(checkpointer=checkpointer)
+
+if env.USE_CUSTOM_CHECKPOINTER:
+    graph = graph.compile(checkpointer=InMemorySaver())
+else:
+    graph = graph.compile()
