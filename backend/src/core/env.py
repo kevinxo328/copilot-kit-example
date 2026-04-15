@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     OPENAI_BASE_URL: str
     OPENAI_MODEL: str
     LANGSMITH_API_KEY: Optional[str]
+    TAVILY_API_KEY: str
     USE_CUSTOM_CHECKPOINTER: bool = True
 
     model_config = SettingsConfigDict(
