@@ -10,12 +10,12 @@
     "preview": "vp preview"
   },
   "dependencies": {
-    "@copilotkit/react-core": "^1.55.0",
-    "@copilotkit/react-ui": "^1.55.0",
-    "@copilotkit/runtime": "^1.55.0",
+    "@copilotkit/react-core": "^1.56.2",
+    "@copilotkit/react-ui": "^1.56.2",
+    "@copilotkit/runtime": "^1.56.2",
     "@tailwindcss/vite": "^4.2.2",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
@@ -25,13 +25,19 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.4.0",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.0",
-    "vite": "catalog:",
+    "globals": "^17.5.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.58.2",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.18",
     "vite-plus": "catalog:"
   },
-  "packageManager": "pnpm@10.33.0"
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "prismjs@<1.30.0": ">=1.30.0",
+      "uuid@<14.0.0": ">=14.0.0"
+    }
+  }
 }
